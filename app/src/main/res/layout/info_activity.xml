@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_1"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="203dp"
+        android:layout_height="673dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="150dp"
+        android:text="Персонаж застрял на острове из-за сильного ветра.Персонаж просит о помощи, но она может прибыть только через несколько дней.И игрок должен помочь персонажу выжить. персонажу понадобится еда, огонь, небольшое жилье. Чтобы получить все это, игроку придется побеждать в мини-играх."
+        android:textSize="18dp"
+
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-190dp"
+        android:backgroundTint="#F5B44F"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:onClick="back"
+        android:textSize="20dp" />
+
+
+</LinearLayout>

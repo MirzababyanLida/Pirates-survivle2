@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/water2"
+    tools:context=".Category">
+
+    <ImageButton
+        android:layout_width="106dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/fire2"
+        android:onClick="startGame" />
+
+    <ImageButton
+        android:layout_width="97dp"
+        android:layout_height="102dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/watter"
+        android:onClick="Start" />
+
+    <TextView
+        android:layout_width="411dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="-330dp"
+        android:text="Вот, что мне нужно"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
