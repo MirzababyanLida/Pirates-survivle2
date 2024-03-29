@@ -16,9 +16,9 @@ public class Game2Strat extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
-    public void StartGame2(View view) {
+    public void StartArkanoid(View view) {
         Intent intent = new Intent(this, Game2View.class);
         startActivity(intent);
-        finish();
+
     }
 }

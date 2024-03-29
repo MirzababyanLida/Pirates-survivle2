@@ -19,6 +19,11 @@ public class Category extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void StartActivity2(View view) {
+        Intent intent = new Intent(this, Candycrush.class);
+        startActivity(intent);
+        finish();
+    }
 
 
 }
