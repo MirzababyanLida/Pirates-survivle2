@@ -68,6 +68,9 @@
         <activity
             android:name=".Velocity"
             android:exported="true"></activity>
+        <activity
+            android:name=".Candycrush"
+            android:exported="true"></activity>
 
 
     </application>

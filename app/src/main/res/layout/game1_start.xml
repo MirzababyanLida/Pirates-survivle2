@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity7"
-    android:background="@drawable/background"
+    tools:context=".Game1_Start"
+    android:background="@drawable/water10"
     android:gravity="center">
 
     <ImageButton
-        android:layout_width="190dp"
-        android:layout_height="182dp"
+        android:layout_width="248dp"
+        android:layout_height="237dp"
         android:background="@drawable/play"
         android:onClick="startGame" />
 

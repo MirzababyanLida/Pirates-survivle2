@@ -15,7 +15,7 @@ public class Category extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        Intent intent = new Intent(this, Game1_Start.class);
+        Intent intent = new Intent(this, Candycrush.class);
         startActivity(intent);
         finish();
     }

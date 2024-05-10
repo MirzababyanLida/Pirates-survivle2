@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/water10"
     android:padding="16dp">
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,6 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Restart"
+            android:backgroundTint="#F5B44F"
             android:onClick="restart"/>
         <View
             android:layout_width="0dp"
@@ -21,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exit"
+            android:backgroundTint="#F5B44F"
             android:onClick="exit"/>
 
     </LinearLayout>
@@ -47,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        android:backgroundTint="#F5B44F"
         android:onClick="GoBack2"/>
 
 </LinearLayout>

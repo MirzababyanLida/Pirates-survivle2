@@ -17,8 +17,8 @@ public class Game2Strat extends AppCompatActivity {
     }
 
     public void StartArkanoid(View view) {
-        Intent intent = new Intent(this, Game2View.class);
-        startActivity(intent);
+        Game2View gameView = new Game2View(this);
+        setContentView(gameView);
 
     }
 }
