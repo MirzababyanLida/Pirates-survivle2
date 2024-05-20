@@ -8,14 +8,14 @@
     <ImageView
         android:layout_width="1500dp"
         android:layout_height="500dp"
-        android:layout_marginTop="1200dp"
+        android:layout_marginTop="1160dp"
         android:background="@drawable/hello_platform2" />
 
     <TextView
         android:layout_width="1000dp"
         android:layout_height="500dp"
         android:layout_marginLeft="-1492dp"
-        android:layout_marginTop="1200dp"
+        android:layout_marginTop="1160dp"
         android:text="Привет, я ——————.Из-за шторма я оказался на необитаемом острове. Я обратился за помощью, потому что она прибудет только через 20 дней.
     Пожалуйста, помогите мне найти еду, воду, построить место для ночлега и т. д, так что же начнем?"
         android:textAlignment="center"
@@ -28,12 +28,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-260dp"
-        android:layout_marginTop="1600dp"
+        android:layout_marginTop="1545dp"
         android:backgroundTint="#F5B44F"
         android:onClick="GoGame"
         android:text="Старт"
         android:textColor="@color/black"
-        android:textSize="50dp"
+        android:textSize="46dp"
         android:textStyle="normal" />
 
 </LinearLayout>

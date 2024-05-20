@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="950dp"
-        android:layout_height="650dp"
+        android:layout_height="600dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/name3" />
@@ -22,18 +22,18 @@
         android:backgroundTint="#F5B44F"
         android:text="Play"
         android:textColor="@color/black"
-        android:textSize="60dp"
+        android:textSize="50dp"
         android:textStyle="bold" />
     <Button
         android:id="@+id/button2"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-400dp"
-        android:layout_marginTop="950dp"
+        android:layout_marginTop="900dp"
         android:backgroundTint="#FCB956"
         android:text="Info"
         android:textColor="@color/black"
-        android:textSize="60dp"
+        android:textSize="50dp"
         android:onClick="GoInfo"
         android:textStyle="bold" />
 
