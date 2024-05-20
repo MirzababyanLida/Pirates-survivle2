@@ -8,8 +8,8 @@
     android:gravity="center">
 
     <ImageButton
-        android:layout_width="248dp"
-        android:layout_height="237dp"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
         android:background="@drawable/play"
         android:onClick="startGame" />
 

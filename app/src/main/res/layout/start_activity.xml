@@ -7,34 +7,33 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="428dp"
-        android:layout_height="199dp"
-        android:layout_marginLeft="-10dp"
-
-        android:layout_marginTop="30dp"
+        android:layout_width="950dp"
+        android:layout_height="650dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
         android:src="@drawable/name3" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="167dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-300dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginLeft="-665dp"
+        android:layout_marginTop="750dp"
         android:backgroundTint="#F5B44F"
         android:text="Play"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="60dp"
         android:textStyle="bold" />
     <Button
         android:id="@+id/button2"
-        android:layout_width="167dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-170dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginLeft="-400dp"
+        android:layout_marginTop="950dp"
         android:backgroundTint="#FCB956"
         android:text="Info"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="60dp"
         android:onClick="GoInfo"
         android:textStyle="bold" />
 

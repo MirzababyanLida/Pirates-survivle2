@@ -8,26 +8,26 @@
 
 
     <TextView
-        android:layout_width="203dp"
-        android:layout_height="673dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="534dp"
+        android:layout_height="1049dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="270dp"
         android:text="Персонаж застрял на острове из-за сильного ветра.Персонаж просит о помощи, но она может прибыть только через несколько дней.И игрок должен помочь персонажу выжить. персонажу понадобится еда, огонь, небольшое жилье. Чтобы получить все это, игроку придется побеждать в мини-играх."
-        android:textSize="18dp"
+        android:textSize="55dp"
 
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="131dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="-190dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="220dp"
         android:backgroundTint="#F5B44F"
         android:text="Back"
         android:textColor="@color/black"
         android:onClick="back"
-        android:textSize="20dp" />
+        android:textSize="60dp" />
 
 
 </LinearLayout>
