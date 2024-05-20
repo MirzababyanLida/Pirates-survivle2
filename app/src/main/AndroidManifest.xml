@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PiratesSurvival"
         tools:targetApi="31">
         <activity
+            android:name=".Game2_info"
+            android:exported="false" />
+        <activity
             android:name=".Hello"
             android:exported="false" />
         <activity
@@ -26,53 +29,46 @@
         </activity>
         <activity
             android:name=".Start"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Info"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Category"
-            android:exported="true"></activity>
-
-
-
+            android:exported="true" />
         <activity
             android:name=".Game1_Start"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Game1Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Game1Over"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Game1View"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".Game2Strat"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".Game2View"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".Game2Over"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".Brick"
-            android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".Velocity"
-            android:exported="true"></activity>
+            android:exported="true" />
+        <activity
+            android:name=".Draw"
+            android:exported="true" />
         <activity
             android:name=".Candycrush"
-            android:exported="true"></activity>
-
-
+            android:exported="true" />
     </application>
 
 </manifest>

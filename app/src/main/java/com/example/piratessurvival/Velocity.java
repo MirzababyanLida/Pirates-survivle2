@@ -2,25 +2,27 @@ package com.example.piratessurvival;
 
 
 public class Velocity {
-    private int x, y;
-    public Velocity(int x, int y){
+    private float x;
+    private float y;
+
+    public Velocity(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public float getX() {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(float x) {
         this.x = x;
     }
-    public int getY(){
+
+    public float getY() {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(float y) {
         this.y = y;
     }
 }
-

@@ -2,15 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@color/black"
+   android:background="@drawable/backgroundarc"
     android:orientation="vertical"
     android:gravity="center">
 
     <ImageButton
-        android:layout_width="186dp"
-        android:layout_height="202dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/play1"
-        android:onClick="StartArkanoid" />
+        android:layout_width="755dp"
+        android:layout_height="551dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/play4"
+        android:onClick="ArkanoidStar" />
 
 </LinearLayout>

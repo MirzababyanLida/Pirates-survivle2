@@ -7,12 +7,22 @@
     android:background="@drawable/water10"
     android:gravity="center">
 
+
     <ImageButton
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:layout_width="138dp"
+        android:layout_height="122dp"
+        android:layout_marginLeft="700dp"
+        android:layout_marginTop="-700dp"
+        android:background="@drawable/info2"
+        android:onClick="info2" />
+
+    <ImageButton
+        android:id="@+id/play2"
+        android:layout_width="795dp"
+        android:layout_height="536dp"
+        android:layout_marginLeft="-700dp"
         android:background="@drawable/play"
         android:onClick="startGame" />
-
 
 
 </LinearLayout>

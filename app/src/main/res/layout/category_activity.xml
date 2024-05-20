@@ -35,4 +35,13 @@
         android:textSize="90dp"
         android:textStyle="bold" />
 
+    <ImageButton
+        android:layout_width="345dp"
+        android:layout_height="323dp"
+        android:layout_marginLeft="-600dp"
+        android:layout_marginTop="800dp"
+        android:background="@drawable/food"
+
+        android:onClick="StartArc3" />
+
 </LinearLayout>

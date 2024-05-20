@@ -16,9 +16,10 @@ public class Game2Strat extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
-    public void StartArkanoid(View view) {
-        Game2View gameView = new Game2View(this);
-        setContentView(gameView);
+    public void ArkanoidStar(View view) {
+        Intent intent = new Intent(this, Candycrush.class);
+        startActivity(intent);
+        finish();
 
     }
 }
