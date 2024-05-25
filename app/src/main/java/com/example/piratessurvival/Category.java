@@ -26,13 +26,13 @@ public class Category extends AppCompatActivity {
     }
 
     public void ArkanoidStart(View view) {
-        Intent intent = new Intent(this, Arkanoid.class);
+        Intent intent = new Intent(this, AnimalShadows.class);
         startActivity(intent);
         finish();
     }
 
     public void StartGame4(View view) {
-        Intent intent = new Intent(this, AnimalShadows.class);
+        Intent intent = new Intent(this, Arkanoid.class);
         startActivity(intent);
         finish();
     }
