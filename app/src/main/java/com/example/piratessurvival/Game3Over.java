@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Game2Over extends AppCompatActivity {
+public class Game3Over extends AppCompatActivity {
 
     TextView tvPoints;
     ImageView ivNewHighest;
@@ -17,7 +17,7 @@ public class Game2Over extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game2_over);
+        setContentView(R.layout.game3_over);
         ivNewHighest = findViewById(R.id.ivNewHeighest);
         tvPoints = findViewById(R.id.tvPoints);
         int points = getIntent().getExtras().getInt("points");
@@ -27,7 +27,7 @@ public class Game2Over extends AppCompatActivity {
         tvPoints.setText("" + points);
     }
     public void restart(View view){
-        Intent intent = new Intent(Game2Over.this, Category.class);
+        Intent intent = new Intent(Game3Over.this, Arkanoid.class);
         startActivity(intent);
         finish();
     }

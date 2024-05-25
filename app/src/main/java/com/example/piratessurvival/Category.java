@@ -25,6 +25,14 @@ public class Category extends AppCompatActivity {
         finish();
     }
 
+    public void ArkanoidStart(View view) {
+        Intent intent = new Intent(this, Arkanoid.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+
 
 
 
