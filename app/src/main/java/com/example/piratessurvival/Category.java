@@ -31,6 +31,12 @@ public class Category extends AppCompatActivity {
         finish();
     }
 
+    public void StartGame4(View view) {
+        Intent intent = new Intent(this, AnimalShadows.class);
+        startActivity(intent);
+        finish();
+    }
+
 
 
 

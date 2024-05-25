@@ -16,7 +16,6 @@ import android.view.View;
 
 import java.util.Random;
 
-
 public class Game1View extends View {
 
     int dWidth, dHeight;
@@ -36,7 +35,6 @@ public class Game1View extends View {
     Context context;
     int handSpeed;
     int trashX, trashY;
-
 
     public Game1View(Context context) {
         super(context);
@@ -69,14 +67,10 @@ public class Game1View extends View {
         healthPaint = new Paint();
         healthPaint.setColor(Color.GREEN);
         handSpeed = 21 + random.nextInt(30);
-        trashX = dWidth/2 - trash.getWidth()/2;
+        trashX = dWidth / 2 - trash.getWidth() / 2;
         trashY = dHeight - trash.getHeight();
-
-
-
-
-
     }
+
     boolean plasticInTrash = false;
 
     @Override
@@ -90,7 +84,6 @@ public class Game1View extends View {
         }
 
         if (handX <= -hand.getWidth()) {
-            resetHandAndPlastic();
             if (!plasticInTrash) {
                 life--;
                 if (life == 0) {
@@ -98,20 +91,24 @@ public class Game1View extends View {
                     return; // Exit the method to prevent further drawing
                 }
             }
+            resetHandAndPlastic();
             plasticInTrash = false;
         }
 
         if (plasticAnimation) {
             plasticY += 40;
             if (plasticY + plastic.getHeight() >= dHeight) {
-                resetHandAndPlastic();
-                if (!plasticInTrash) {
+                if (plasticX + plastic.getWidth() / 2 >= trashX && plasticX + plastic.getWidth() / 2 <= trashX + trash.getWidth()) {
+                    points++;
+                    plasticInTrash = true;
+                } else {
                     life--;
                     if (life == 0) {
                         gameOver();
                         return; // Exit the method to prevent further drawing
                     }
                 }
+                resetHandAndPlastic();
                 plasticInTrash = false;
             }
         }
@@ -130,7 +127,6 @@ public class Game1View extends View {
             handler.postDelayed(runnable, UPDATE_MILLIS);
     }
 
-
     private void resetHandAndPlastic() {
         handX = dWidth + random.nextInt(300);
         handY = random.nextInt(600);
@@ -138,8 +134,6 @@ public class Game1View extends View {
         plasticY = handY + hand.getHeight() - 30;
         plasticAnimation = false;
     }
-
-
 
     private void gameOver() {
         Intent intent = new Intent(context, Game1Over.class);
@@ -157,16 +151,9 @@ public class Game1View extends View {
                     (touchX >= handX && touchX <= (handX + hand.getWidth())
                             && touchY >= handY && touchY <= (handY + hand.getHeight()))) {
                 plasticAnimation = true;
-                points++; // Increment points
-                plasticInTrash = true; // Set plasticInTrash to true
                 return true; // Touch event handled
             }
         }
         return super.onTouchEvent(event);
     }
-
-
 }
-
-
-

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Game1_Start"
+    android:background="@drawable/background4rd"
+    android:gravity="center">
+
+
+    <ImageButton
+        android:id="@+id/play2"
+        android:layout_width="855dp"
+        android:layout_height="554dp"
+        android:layout_marginLeft="00dp"
+        android:background="@drawable/play4rd"
+        android:onClick="StartGameShadow" />
+
+
+</LinearLayout>

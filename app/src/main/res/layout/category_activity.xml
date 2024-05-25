@@ -38,9 +38,17 @@
     <ImageButton
         android:layout_width="345dp"
         android:layout_height="323dp"
-        android:layout_marginLeft="-600dp"
+        android:layout_marginLeft="-955dp"
         android:layout_marginTop="800dp"
         android:background="@drawable/food"
         android:onClick="ArkanoidStart" />
+
+    <ImageButton
+        android:layout_width="295dp"
+        android:layout_height="289dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="800dp"
+        android:background="@drawable/tent"
+        android:onClick="StartGame4" />
 
 </LinearLayout>

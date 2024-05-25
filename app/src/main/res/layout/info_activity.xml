@@ -26,7 +26,7 @@
         android:backgroundTint="#F5B44F"
         android:text="Back"
         android:textColor="@color/black"
-        android:onClick="back"
+        android:onClick="GoBack"
         android:textSize="50dp" />
 
 
