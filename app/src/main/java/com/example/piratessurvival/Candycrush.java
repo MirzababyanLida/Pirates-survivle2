@@ -140,7 +140,7 @@ public class Candycrush extends AppCompatActivity {
                 candy.get(x).setTag(notCandy);
 
                 // Check the score
-                if (score >= 100) {
+                if (score >= 20) {
                     // Show the congratulations dialog
                     showCongratulationsDialog();
                 }
@@ -232,6 +232,7 @@ public class Candycrush extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 // Go to Category activity
                 Intent intent = new Intent(Candycrush.this, Category.class);
+                intent.putExtra("water_checkbox_visible", true); // Pass the extra parameter
                 startActivity(intent);
                 finish(); // Close the current activity
             }
@@ -239,5 +240,6 @@ public class Candycrush extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 }
 

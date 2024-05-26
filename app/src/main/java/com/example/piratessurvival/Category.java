@@ -27,7 +27,45 @@ public class Category extends AppCompatActivity {
         } else {
             fireCheckbox.setVisibility(View.GONE);
         }
+
+        // Check the intent for the "water_checkbox_visible" extra
+        boolean isWaterCheckboxVisible = intent.getBooleanExtra("water_checkbox_visible", false);
+
+        // Get the water checkbox ImageView
+        ImageView waterCheckbox = findViewById(R.id.water_checkbox);
+
+        // Set visibility based on the intent extra
+        if (isWaterCheckboxVisible) {
+            waterCheckbox.setVisibility(View.VISIBLE);
+        } else {
+            waterCheckbox.setVisibility(View.GONE);
+        }
+
+
+    boolean isTentCheckboxVisible = intent.getBooleanExtra("tent_checkbox_visible", false);
+
+    // Get the water checkbox ImageView
+    ImageView tentCheckbox = findViewById(R.id.tent_checkbox);
+
+    // Set visibility based on the intent extra
+        if (isTentCheckboxVisible) {
+        tentCheckbox.setVisibility(View.VISIBLE);
+    } else {
+        tentCheckbox.setVisibility(View.GONE);
     }
+
+        boolean isFoodCheckboxVisible = intent.getBooleanExtra("food_checkbox_visible", false);
+
+        // Get the water checkbox ImageView
+        ImageView foodCheckbox = findViewById(R.id.food_checkbox);
+
+        // Set visibility based on the intent extra
+        if (isFoodCheckboxVisible) {
+            foodCheckbox.setVisibility(View.VISIBLE);
+        } else {
+            foodCheckbox.setVisibility(View.GONE);
+        }
+}
 
     public void startGame(View view) {
         Intent intent = new Intent(this, Game1_Start.class);

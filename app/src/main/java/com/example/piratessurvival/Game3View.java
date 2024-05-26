@@ -132,7 +132,7 @@ public class Game3View extends View {
         }
 
         canvas.drawText("" + points, 20, TEXT_SIZE, textPaint);
-        if (points >= 240) {
+        if (points >= 40) {
             gameOver = true;
             launchScoreReachedMessage(240);
         }
@@ -208,6 +208,7 @@ public class Game3View extends View {
                             @Override
                             public void run() {
                                 Intent intent = new Intent(context, Category.class);
+                                intent.putExtra("tent_checkbox_visible", true);
                                 context.startActivity(intent);
                                 ((Activity) context).finish();
                             }

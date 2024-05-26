@@ -58,14 +58,16 @@
     android:visibility="gone" />
 
     <ImageView
+        android:id="@+id/water_checkbox"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="520dp"
+        android:layout_marginLeft="-30dp"
         android:background="@drawable/check_markk"
         android:layout_marginTop="550dp"
         android:visibility="gone" />
 
     <ImageView
+        android:id="@+id/food_checkbox"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="-650dp"
@@ -74,11 +76,12 @@
         android:visibility="gone" />
 
     <ImageView
+        android:id="@+id/tent_checkbox"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="460dp"
+        android:layout_marginLeft="-10dp"
         android:background="@drawable/check_markk"
         android:layout_marginTop="950dp"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
 </LinearLayout>

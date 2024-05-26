@@ -225,6 +225,7 @@ public class Game4View extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     // Go to Category activity
                     Intent intent = new Intent(Game4View.this, Category.class);
+                    intent.putExtra("food_checkbox_visible", true);
                     startActivity(intent);
                     finish(); // Close the current activity
                 }
@@ -240,6 +241,7 @@ public class Game4View extends AppCompatActivity {
                     setImages();
                     enableImages();
                     Intent intent = new Intent(Game4View.this, AnimalShadows.class);
+
                     startActivity(intent);
                     finish(); // Close the current activity
                 }
