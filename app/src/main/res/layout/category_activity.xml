@@ -18,8 +18,8 @@
     <ImageButton
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="00dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginLeft="400dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/watter"
 
         android:onClick="StartActivity2" />
@@ -39,7 +39,7 @@
         android:layout_width="345dp"
         android:layout_height="323dp"
         android:layout_marginLeft="-955dp"
-        android:layout_marginTop="800dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/food"
         android:onClick="ArkanoidStart" />
 

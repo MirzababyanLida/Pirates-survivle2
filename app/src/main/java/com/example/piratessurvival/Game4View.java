@@ -1,6 +1,7 @@
 package com.example.piratessurvival;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,6 @@ public class Game4View extends AppCompatActivity {
     ImageView image1, image2, image3, image4, imageMain;
     TextView tv_status;
     Button b_next;
-
 
     //list of colored images
     Integer[] images = {
@@ -70,8 +70,6 @@ public class Game4View extends AppCompatActivity {
             R.drawable.animal_bw_20,
             R.drawable.animal_bw_21,
             R.drawable.animal_bw_22,
-
-
     };
 
     Integer[] images_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
@@ -80,137 +78,76 @@ public class Game4View extends AppCompatActivity {
     int correctAnswer = 0;
     int score = 0;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game4_view);
 
-        image1 = (ImageView) findViewById(R.id.image1);
-        image2 = (ImageView) findViewById(R.id.image2);
-        image3 = (ImageView) findViewById(R.id.image3);
-        image4 = (ImageView) findViewById(R.id.image4);
-        imageMain = (ImageView) findViewById(R.id.imageMain);
-
-        tv_status = (TextView) findViewById(R.id.tv_status);
-
-        b_next = (Button) findViewById(R.id.b_next);
+        image1 = findViewById(R.id.image1);
+        image2 = findViewById(R.id.image2);
+        image3 = findViewById(R.id.image3);
+        image4 = findViewById(R.id.image4);
+        imageMain = findViewById(R.id.imageMain);
+        tv_status = findViewById(R.id.tv_status);
+        b_next = findViewById(R.id.b_next);
 
         Collections.shuffle(Arrays.asList(images_numbers));
-
         setImages();
 
         image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(correctAnswer == 1){
-                    score++;
-                    tv_status.setText("Correct!");
-                    b_next.setVisibility(View.VISIBLE);
-                }else {
-                    tv_status.setText("Wrong!");
-                    b_next.setVisibility(View.VISIBLE);
-                }
-                image1.setEnabled(false);
-                image2.setEnabled(false);
-                image3.setEnabled(false);
-                image4.setEnabled(false);
-
+                handleAnswer(1);
             }
         });
 
         image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(correctAnswer == 2){
-                    score++;
-                    tv_status.setText("Correct!");
-                    b_next.setVisibility(View.VISIBLE);
-                }else {
-                    tv_status.setText("Wrong!");
-                    b_next.setVisibility(View.VISIBLE);
-                }
-                image1.setEnabled(false);
-                image2.setEnabled(false);
-                image3.setEnabled(false);
-                image4.setEnabled(false);
-
+                handleAnswer(2);
             }
         });
 
         image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(correctAnswer == 3){
-                    score++;
-                    tv_status.setText("Correct!");
-                    b_next.setVisibility(View.VISIBLE);
-                }else {
-                    tv_status.setText("Wrong!");
-                    b_next.setVisibility(View.VISIBLE);
-                }
-                image1.setEnabled(false);
-                image2.setEnabled(false);
-                image3.setEnabled(false);
-                image4.setEnabled(false);
-
+                handleAnswer(3);
             }
         });
 
         image4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(correctAnswer == 4){
-                    score++;
-                    tv_status.setText("Correct!");
-                    b_next.setVisibility(View.VISIBLE);
-                }else {
-                    tv_status.setText("Wrong!");
-                    b_next.setVisibility(View.VISIBLE);
-                }
-                image1.setEnabled(false);
-                image2.setEnabled(false);
-                image3.setEnabled(false);
-                image4.setEnabled(false);
-
+                handleAnswer(4);
             }
         });
 
         b_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                turn++;
-                if(turn == 11){
-                    checkEnd();
-                }else{
-                    setImages();
-                }
+                nextTurn();
             }
         });
     }
 
-    private void setImages(){
-        //which is the correct answer 1-4
+    private void setImages() {
         Random r = new Random();
-         correctAnswer = r.nextInt(4) + 1;
-        // wrong answers
-        int wrongAnswer1, wrongAnswer2, wrongAnswer3;
+        correctAnswer = r.nextInt(4) + 1;
 
+        int wrongAnswer1, wrongAnswer2, wrongAnswer3;
         do {
             wrongAnswer1 = r.nextInt(22);
-        }while (wrongAnswer1 == images_numbers[turn]);
+        } while (wrongAnswer1 == images_numbers[turn]);
 
         do {
             wrongAnswer2 = r.nextInt(22);
-        }while (wrongAnswer2 == images_numbers[turn] || wrongAnswer2 == wrongAnswer1);
+        } while (wrongAnswer2 == images_numbers[turn] || wrongAnswer2 == wrongAnswer1);
 
         do {
             wrongAnswer3 = r.nextInt(22);
-        }while (wrongAnswer3 == images_numbers[turn] || wrongAnswer3 == wrongAnswer2 || wrongAnswer3 == wrongAnswer1);
+        } while (wrongAnswer3 == images_numbers[turn] || wrongAnswer3 == wrongAnswer2 || wrongAnswer3 == wrongAnswer1);
 
-        switch (correctAnswer){
+        switch (correctAnswer) {
             case 1:
                 image1.setImageResource(images[images_numbers[turn]]);
                 image2.setImageResource(images[wrongAnswer1]);
@@ -235,33 +172,81 @@ public class Game4View extends AppCompatActivity {
                 image3.setImageResource(images[wrongAnswer3]);
                 image4.setImageResource(images[images_numbers[turn]]);
                 break;
-
         }
 
         imageMain.setImageResource(images_bw[images_numbers[turn]]);
 
         tv_status.setText("");
         b_next.setVisibility(View.INVISIBLE);
+    }
 
+    private void handleAnswer(int chosenAnswer) {
+        if (correctAnswer == chosenAnswer) {
+            score++;
+            tv_status.setText("Correct!");
+        } else {
+            tv_status.setText("Wrong!");
+        }
+        disableImages();
+        b_next.setVisibility(View.VISIBLE);
+    }
+
+    private void nextTurn() {
+        turn++;
+        if (turn == 11) {
+            checkEnd();
+        } else {
+            setImages();
+            enableImages();
+        }
+    }
+
+    private void disableImages() {
+        image1.setEnabled(false);
+        image2.setEnabled(false);
+        image3.setEnabled(false);
+        image4.setEnabled(false);
+    }
+
+    private void enableImages() {
         image1.setEnabled(true);
         image2.setEnabled(true);
         image3.setEnabled(true);
         image4.setEnabled(true);
-
     }
 
-    private void checkEnd(){
+    private void checkEnd() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setCancelable(false);
-        alertDialogBuilder.setMessage("Game Over! Score:" + score);
-        alertDialogBuilder.setPositiveButton("QUIT", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-
-            }
-        });
+        if (score >= 10) {
+            alertDialogBuilder.setMessage("Congratulations! You earned 10 points.");
+            alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Go to Category activity
+                    Intent intent = new Intent(Game4View.this, Category.class);
+                    startActivity(intent);
+                    finish(); // Close the current activity
+                }
+            });
+        } else {
+            alertDialogBuilder.setMessage("Try Again! You earned " + score + " points.");
+            alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Continue playing or restart the game
+                    turn = 1;
+                    score = 0;
+                    setImages();
+                    enableImages();
+                    Intent intent = new Intent(Game4View.this, AnimalShadows.class);
+                    startActivity(intent);
+                    finish(); // Close the current activity
+                }
+            });
+        }
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
 }
+
