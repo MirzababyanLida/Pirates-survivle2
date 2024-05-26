@@ -165,6 +165,7 @@ public class Game1View extends View {
             @Override
             public void run() {
                 Intent intent = new Intent(context, Category.class);
+                intent.putExtra("fire_checkbox_visible", true); // Передаем параметр
                 context.startActivity(intent);
                 ((Activity) context).finish();
             }

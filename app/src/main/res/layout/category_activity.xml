@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +20,6 @@
         android:layout_marginLeft="400dp"
         android:layout_marginTop="400dp"
         android:background="@drawable/watter"
-
         android:onClick="StartActivity2" />
 
     <TextView
@@ -29,7 +27,6 @@
         android:layout_height="112dp"
         android:layout_marginLeft="-850dp"
         android:layout_marginTop="70dp"
-
         android:text="Вот, что мне нужно"
         android:textColor="@color/white"
         android:textSize="90dp"
@@ -39,7 +36,7 @@
         android:layout_width="345dp"
         android:layout_height="323dp"
         android:layout_marginLeft="-955dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="800dp"
         android:background="@drawable/food"
         android:onClick="ArkanoidStart" />
 
@@ -50,5 +47,38 @@
         android:layout_marginTop="800dp"
         android:background="@drawable/tent"
         android:onClick="StartGame4" />
+
+    <ImageView
+        android:id="@+id/fire_checkbox"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_marginLeft="-650dp"
+    android:background="@drawable/check_markk"
+    android:layout_marginTop="550dp"
+    android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="520dp"
+        android:background="@drawable/check_markk"
+        android:layout_marginTop="550dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="-650dp"
+        android:background="@drawable/check_markk"
+        android:layout_marginTop="950dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="460dp"
+        android:background="@drawable/check_markk"
+        android:layout_marginTop="950dp"
+        android:visibility="gone" />
 
 </LinearLayout>
