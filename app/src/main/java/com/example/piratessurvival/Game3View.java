@@ -1,7 +1,9 @@
 package com.example.piratessurvival;
 
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,6 +15,8 @@ import android.os.Handler;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.appcompat.app.AlertDialog;
 
 import java.util.Random;
 
@@ -128,6 +132,10 @@ public class Game3View extends View {
         }
 
         canvas.drawText("" + points, 20, TEXT_SIZE, textPaint);
+        if (points >= 240) {
+            gameOver = true;
+            launchScoreReachedMessage(240);
+        }
         if (life == 2) {
             healthPaint.setColor(Color.YELLOW);
         } else if (life == 1) {
@@ -173,15 +181,41 @@ public class Game3View extends View {
 
     private void launchGameOver() {
         handler.removeCallbacksAndMessages(null);
-         Intent intent = new Intent(context, Game3Over.class);
-        intent.putExtra("points", points);
-        context.startActivity(intent);
-        ((Activity) context).finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Game Over! You've run out of lives.")
+                .setCancelable(false)
+                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(context, Arkanoid.class);
+                        context.startActivity(intent);
+                        ((Activity) context).finish();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
-    private int xVelocity() {
-        int[] values = {-35, -30, -25, 25, 30, 35};
-        int index = random.nextInt(6);
-        return values[index];
+    private void launchScoreReachedMessage(int score) {
+        handler.removeCallbacksAndMessages(null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Congratulations! You've reached " + score + " points!")
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(context, Category.class);
+                                context.startActivity(intent);
+                                ((Activity) context).finish();
+                            }
+                        }, 1000); // 5 seconds delay
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
+

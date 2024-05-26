@@ -36,7 +36,7 @@ public class Candycrush extends AppCompatActivity {
     int interval = 100;
     TextView scoreResult;
     int score = 0;
-    final int WIN_SCORE = 50; // Score threshold to end the game
+    final int WIN_SCORE = 30; // Score threshold to end the game
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -218,14 +218,15 @@ public class Candycrush extends AppCompatActivity {
         }
     }
     private void endGame() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Candycrush.this);
         builder.setMessage("Congratulations! You've reached 200 points!")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Just dismiss the dialog
                         dialog.dismiss();
-                        // After the dialog is dismissed, wait for 10 seconds before starting the new activity
+
+                        // After the dialog is dismissed, wait for 5 seconds before starting the new activity
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -233,14 +234,15 @@ public class Candycrush extends AppCompatActivity {
                                 startActivity(intent);
                                 finish(); // Close the game activity
                             }
-                        }, 10000); // 10 seconds delay
+                        }, 5000); // 5 seconds delay
+
+                        // Stop the game loop
+                        mHandler.removeCallbacks(repeatChecker);
                     }
                 });
         AlertDialog alert = builder.create();
         alert.show();
-
-        // Stop the game loop
-        mHandler.removeCallbacks(repeatChecker);
     }
+
 
 }

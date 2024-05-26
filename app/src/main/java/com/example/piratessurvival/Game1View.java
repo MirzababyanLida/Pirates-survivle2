@@ -14,6 +14,8 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
+
 import java.util.Random;
 
 public class Game1View extends View {
@@ -123,6 +125,12 @@ public class Game1View extends View {
         else if (life == 1)
             healthPaint.setColor(Color.RED);
         canvas.drawRect(dWidth - 200, 30, dWidth - 200 * 60 * life, 80, healthPaint);
+
+        if (points == 10) {
+            showCongratulationsDialog();
+            return;
+        }
+
         if (life != 0)
             handler.postDelayed(runnable, UPDATE_MILLIS);
     }
@@ -136,10 +144,44 @@ public class Game1View extends View {
     }
 
     private void gameOver() {
-        Intent intent = new Intent(context, Game1Over.class);
-        intent.putExtra("points", points);
-        context.startActivity(intent);
-        ((Activity) context).finish();
+        if (points < 10) {
+            showTryAgainDialog();
+        } else {
+            Intent intent = new Intent(context, Game1Over.class);
+            intent.putExtra("points", points);
+            context.startActivity(intent);
+            ((Activity) context).finish();
+        }
+    }
+
+    private void showCongratulationsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Вы заработали 10 баллов!")
+                .setCancelable(false)
+                .create()
+                .show();
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(context, Category.class);
+                context.startActivity(intent);
+                ((Activity) context).finish();
+            }
+        }, 5000);
+    }
+
+    private void showTryAgainDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Попробуйте снова!")
+                .setCancelable(false)
+                .setPositiveButton("OK", (dialog, id) -> {
+                    Intent intent = new Intent(context, Game1_Start.class);
+                    context.startActivity(intent);
+                    ((Activity) context).finish();
+                })
+                .create()
+                .show();
     }
 
     @Override
