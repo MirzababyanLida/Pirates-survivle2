@@ -18,8 +18,8 @@
     <ImageButton
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="400dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginLeft="00dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/watter"
 
         android:onClick="StartActivity2" />

@@ -1,6 +1,8 @@
 package com.example.piratessurvival;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +11,6 @@ import android.util.DisplayMetrics;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,13 +28,12 @@ public class Candycrush extends AppCompatActivity {
 
     int widthOfBlock, noOfBlocks = 8, widthOfScreen;
     ArrayList<ImageView> candy = new ArrayList<>();
-    int candyToBeDragged, candyToBeReplaced;
+    int candyToBeDragged, candyToBeReplased;
     int notCandy = R.drawable.transparent;
     Handler mHandler;
     int interval = 100;
     TextView scoreResult;
     int score = 0;
-    final int WIN_SCORE = 30; // Score threshold to end the game
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -56,7 +53,7 @@ public class Candycrush extends AppCompatActivity {
                 void onSwipeLeft() {
                     super.onSwipeLeft();
                     candyToBeDragged = imageView.getId();
-                    candyToBeReplaced = candyToBeDragged - 1;
+                    candyToBeReplased = candyToBeDragged - 1;
                     candyInterChange();
                 }
 
@@ -64,7 +61,7 @@ public class Candycrush extends AppCompatActivity {
                 void onSwipeRight() {
                     super.onSwipeRight();
                     candyToBeDragged = imageView.getId();
-                    candyToBeReplaced = candyToBeDragged + 1;
+                    candyToBeReplased = candyToBeDragged + 1;
                     candyInterChange();
                 }
 
@@ -72,7 +69,7 @@ public class Candycrush extends AppCompatActivity {
                 void onSwipeTop() {
                     super.onSwipeTop();
                     candyToBeDragged = imageView.getId();
-                    candyToBeReplaced = candyToBeDragged - noOfBlocks;
+                    candyToBeReplased = candyToBeDragged - noOfBlocks;
                     candyInterChange();
                 }
 
@@ -80,7 +77,7 @@ public class Candycrush extends AppCompatActivity {
                 void onSwipeBottom() {
                     super.onSwipeBottom();
                     candyToBeDragged = imageView.getId();
-                    candyToBeReplaced = candyToBeDragged + noOfBlocks;
+                    candyToBeReplased = candyToBeDragged + noOfBlocks;
                     candyInterChange();
                 }
             });
@@ -91,15 +88,15 @@ public class Candycrush extends AppCompatActivity {
 
     private void checkRowForTree() {
         for (int i = 0; i < 62; i++) {
-            int chosenCandy = (int) candy.get(i).getTag();
+            int chosedCandy = (int) candy.get(i).getTag();
             boolean isBlank = (int) candy.get(i).getTag() == notCandy;
             Integer[] notValid = {6, 7, 14, 15, 22, 23, 30, 31, 38, 39, 46, 47, 54, 55};
             List<Integer> list = Arrays.asList(notValid);
             if (!list.contains(i)) {
                 int x = i;
-                if ((int) candy.get(x++).getTag() == chosenCandy && !isBlank &&
-                        (int) candy.get(x++).getTag() == chosenCandy &&
-                        (int) candy.get(x).getTag() == chosenCandy) {
+                if ((int) candy.get(x++).getTag() == chosedCandy && !isBlank &&
+                        (int) candy.get(x++).getTag() == chosedCandy &&
+                        (int) candy.get(x).getTag() == chosedCandy) {
                     score = score + 3;
                     scoreResult.setText(String.valueOf(score));
                     candy.get(x).setImageResource(notCandy);
@@ -110,6 +107,12 @@ public class Candycrush extends AppCompatActivity {
                     x--;
                     candy.get(x).setImageResource(notCandy);
                     candy.get(x).setTag(notCandy);
+
+                    // Check the score
+                    if (score == 100) {
+                        // Show the congratulations dialog
+                        showCongratulationsDialog();
+                    }
                 }
             }
         }
@@ -118,12 +121,13 @@ public class Candycrush extends AppCompatActivity {
 
     private void checkColumnForTree() {
         for (int i = 0; i < 47; i++) {
-            int chosenCandy = (int) candy.get(i).getTag();
+            int chosedCandy = (int) candy.get(i).getTag();
             boolean isBlank = (int) candy.get(i).getTag() == notCandy;
+
             int x = i;
-            if ((int) candy.get(x).getTag() == chosenCandy && !isBlank &&
-                    (int) candy.get(x + noOfBlocks).getTag() == chosenCandy &&
-                    (int) candy.get(x + 2 * noOfBlocks).getTag() == chosenCandy) {
+            if ((int) candy.get(x).getTag() == chosedCandy && !isBlank &&
+                    (int) candy.get(x + noOfBlocks).getTag() == chosedCandy &&
+                    (int) candy.get(x + 2 * noOfBlocks).getTag() == chosedCandy) {
                 score = score + 3;
                 scoreResult.setText(String.valueOf(score));
                 candy.get(x).setImageResource(notCandy);
@@ -134,6 +138,12 @@ public class Candycrush extends AppCompatActivity {
                 x = x + noOfBlocks;
                 candy.get(x).setImageResource(notCandy);
                 candy.get(x).setTag(notCandy);
+
+                // Check the score
+                if (score >= 100) {
+                    // Show the congratulations dialog
+                    showCongratulationsDialog();
+                }
             }
         }
     }
@@ -171,7 +181,6 @@ public class Candycrush extends AppCompatActivity {
                 checkRowForTree();
                 checkColumnForTree();
                 moveDownCandies();
-                checkWin();
             } finally {
                 mHandler.postDelayed(repeatChecker, interval);
             }
@@ -183,18 +192,19 @@ public class Candycrush extends AppCompatActivity {
     }
 
     private void candyInterChange() {
-        int background = (int) candy.get(candyToBeReplaced).getTag();
+        int background = (int) candy.get(candyToBeReplased).getTag();
         int background1 = (int) candy.get(candyToBeDragged).getTag();
         candy.get(candyToBeDragged).setImageResource(background);
-        candy.get(candyToBeReplaced).setImageResource(background1);
+        candy.get(candyToBeReplased).setImageResource(background1);
         candy.get(candyToBeDragged).setTag(background);
-        candy.get(candyToBeReplaced).setTag(background1);
+        candy.get(candyToBeReplased).setTag(background1);
     }
 
     private void createBoard() {
         GridLayout gridLayout = findViewById(R.id.board);
         gridLayout.setRowCount(noOfBlocks);
         gridLayout.setColumnCount(noOfBlocks);
+        //since we want square.
         gridLayout.getLayoutParams().width = widthOfScreen;
         gridLayout.getLayoutParams().height = widthOfScreen;
         for (int i = 0; i < noOfBlocks * noOfBlocks; i++) {
@@ -204,7 +214,8 @@ public class Candycrush extends AppCompatActivity {
                     android.view.ViewGroup.LayoutParams(widthOfBlock, widthOfBlock));
             imageView.setMaxHeight(widthOfBlock);
             imageView.setMaxWidth(widthOfBlock);
-            int randomCandy = (int) Math.floor(Math.random() * candies.length);
+            int randomCandy = (int) Math.floor(Math.random() * candies.length);// this generates
+            // randomIndex from candies array
             imageView.setImageResource(candies[randomCandy]);
             imageView.setTag(candies[randomCandy]);
             candy.add(imageView);
@@ -212,37 +223,21 @@ public class Candycrush extends AppCompatActivity {
         }
     }
 
-    private void checkWin() {
-        if (score >= WIN_SCORE) {
-            endGame();
-        }
+    // Method to show the congratulations dialog
+    private void showCongratulationsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Congratulations! You earned 100 points.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Go to Category activity
+                Intent intent = new Intent(Candycrush.this, Category.class);
+                startActivity(intent);
+                finish(); // Close the current activity
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
-    private void endGame() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(Candycrush.this);
-        builder.setMessage("Congratulations! You've reached 200 points!")
-                .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // Just dismiss the dialog
-                        dialog.dismiss();
-
-                        // After the dialog is dismissed, wait for 5 seconds before starting the new activity
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                Intent intent = new Intent(Candycrush.this, Category.class);
-                                startActivity(intent);
-                                finish(); // Close the game activity
-                            }
-                        }, 5000); // 5 seconds delay
-
-                        // Stop the game loop
-                        mHandler.removeCallbacks(repeatChecker);
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
-
 }
+
