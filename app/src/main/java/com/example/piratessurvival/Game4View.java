@@ -219,7 +219,7 @@ public class Game4View extends AppCompatActivity {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setCancelable(false);
         if (score >= 10) {
-            alertDialogBuilder.setMessage("Congratulations! You earned 10 points.");
+            alertDialogBuilder.setMessage("Поздравляем! Вы заработали 10 баллов.");
             alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -231,7 +231,7 @@ public class Game4View extends AppCompatActivity {
                 }
             });
         } else {
-            alertDialogBuilder.setMessage("Try Again! You earned " + score + " points.");
+            alertDialogBuilder.setMessage("Попробуйте снова! Вы заработали " + score + " баллов.");
             alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

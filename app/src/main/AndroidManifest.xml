@@ -12,15 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PiratesSurvival"
         tools:targetApi="31">
-        <activity
-            android:name=".GAme4Info"
-            android:exported="false" />
-        <activity
-            android:name=".Game3Info"
-            android:exported="false" />
-        <activity
-            android:name=".Game2Info"
-            android:exported="false" />
+
         <activity
             android:name=".Splash"
             android:exported="true">
@@ -49,6 +41,9 @@
             android:name=".Game1Activity"
             android:exported="true" />
         <activity
+            android:name=".Game1_info"
+            android:exported="false" />
+        <activity
             android:name=".Game1View"
             android:exported="true" />
         <activity
@@ -58,7 +53,7 @@
             android:name=".Game2Strat"
             android:exported="false" />
         <activity
-            android:name=".Game1_info"
+            android:name=".Game2Info"
             android:exported="false" />
         <activity
             android:name=".Candycrush"
@@ -67,6 +62,9 @@
             android:name=".Arkanoid"
             android:exported="true"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".Game3Info"
+            android:exported="false" />
         <activity
             android:name=".Game3View"
             android:exported="true"
@@ -85,8 +83,15 @@
             android:name=".AnimalShadows"
             android:exported="true" />
         <activity
+            android:name=".GAme4Info"
+            android:exported="false" />
+        <activity
             android:name=".Game4View"
             android:exported="true" />
+
+        <activity
+            android:name=".GameEnd"
+            android:exported="false" />
     </application>
 
 </manifest>

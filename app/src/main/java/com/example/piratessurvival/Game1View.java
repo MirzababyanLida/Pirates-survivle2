@@ -156,7 +156,7 @@ public class Game1View extends View {
 
     private void showCongratulationsDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Вы заработали 10 баллов!")
+        builder.setMessage("Поздравляем! Вы заработали 10 баллов.")
                 .setCancelable(false)
                 .create()
                 .show();

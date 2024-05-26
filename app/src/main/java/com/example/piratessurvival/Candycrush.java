@@ -140,7 +140,7 @@ public class Candycrush extends AppCompatActivity {
                 candy.get(x).setTag(notCandy);
 
                 // Check the score
-                if (score >= 100) {
+                if (score == 102) {
                     // Show the congratulations dialog
                     showCongratulationsDialog();
                 }
@@ -226,7 +226,7 @@ public class Candycrush extends AppCompatActivity {
     // Method to show the congratulations dialog
     private void showCongratulationsDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Congratulations! You earned 100 points.");
+        builder.setMessage("Поздравляем! Вы заработали 102 очков.");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

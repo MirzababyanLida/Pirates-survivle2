@@ -16,7 +16,7 @@
         android:layout_height="500dp"
         android:layout_marginLeft="-1492dp"
         android:layout_marginTop="1160dp"
-        android:text="Привет, я  Captain Stormbeard.Из-за шторма я оказался на необитаемом острове. Я обратился за помощью, потому что она прибудет только через 20 дней.
+        android:text="Привет, я  Captain Stormbeard.Из-за шторма я оказался на необитаемом острове. Я обратился за помощью, но она прибудет только через 20 дней.
     Пожалуйста, помогите мне найти еду, воду, построить место для ночлега и т. д, так что же начнем?"
         android:textAlignment="center"
         android:textColor="@color/black"

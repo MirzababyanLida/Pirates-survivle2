@@ -3,6 +3,7 @@ package com.example.piratessurvival;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,19 +42,6 @@ public class Category extends AppCompatActivity {
             waterCheckbox.setVisibility(View.GONE);
         }
 
-
-    boolean isTentCheckboxVisible = intent.getBooleanExtra("tent_checkbox_visible", false);
-
-    // Get the water checkbox ImageView
-    ImageView tentCheckbox = findViewById(R.id.tent_checkbox);
-
-    // Set visibility based on the intent extra
-        if (isTentCheckboxVisible) {
-        tentCheckbox.setVisibility(View.VISIBLE);
-    } else {
-        tentCheckbox.setVisibility(View.GONE);
-    }
-
         boolean isFoodCheckboxVisible = intent.getBooleanExtra("food_checkbox_visible", false);
 
         // Get the water checkbox ImageView
@@ -65,7 +53,36 @@ public class Category extends AppCompatActivity {
         } else {
             foodCheckbox.setVisibility(View.GONE);
         }
-}
+
+
+        // Check the intent for the "tent_checkbox_visible" extra
+        boolean isTentCheckboxVisible = intent.getBooleanExtra("tent_checkbox_visible", false);
+
+        // Get the tent checkbox ImageView
+        ImageView tentCheckbox = findViewById(R.id.tent_checkbox);
+
+        // Set visibility based on the intent extra
+        if (isTentCheckboxVisible) {
+            tentCheckbox.setVisibility(View.VISIBLE);
+        } else {
+            tentCheckbox.setVisibility(View.GONE);
+        }
+
+        // Get the OK button
+        Button okButton = findViewById(R.id.button_ok);
+
+        // Set visibility based on the tent checkbox visibility
+        if (isTentCheckboxVisible) {
+            okButton.setVisibility(View.VISIBLE);
+        } else {
+            okButton.setVisibility(View.GONE);
+        }
+    }
+
+
+
+
+
 
     public void startGame(View view) {
         Intent intent = new Intent(this, Game1_Start.class);
@@ -87,6 +104,12 @@ public class Category extends AppCompatActivity {
 
     public void StartGame4(View view) {
         Intent intent = new Intent(this, Arkanoid.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void GoEnd(View view) {
+        Intent intent = new Intent(this, GameEnd.class);
         startActivity(intent);
         finish();
     }

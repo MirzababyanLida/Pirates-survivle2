@@ -84,4 +84,17 @@
         android:layout_marginTop="950dp"
         android:visibility="gone"/>
 
+    <Button
+        android:id="@+id/button_ok"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-300dp"
+        android:layout_marginTop="1500dp"
+        android:backgroundTint="#2196F3"
+        android:text="OK"
+        android:textColor="@color/white"
+        android:onClick="GoEnd"
+        android:textSize="50dp"
+        android:visibility="gone" />
+
 </LinearLayout>

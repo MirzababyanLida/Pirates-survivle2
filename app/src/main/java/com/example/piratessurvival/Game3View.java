@@ -59,7 +59,7 @@ public class Game3View extends View {
                 invalidate();
             }
         };
-        textPaint.setColor(Color.BLACK);
+        textPaint.setColor(Color.GREEN);
         textPaint.setTextSize(TEXT_SIZE);
         textPaint.setTextAlign(Paint.Align.LEFT);
         healthPaint.setColor(Color.GREEN);
@@ -132,7 +132,7 @@ public class Game3View extends View {
         }
 
         canvas.drawText("" + points, 20, TEXT_SIZE, textPaint);
-        if (points >= 40) {
+        if (points == 240) {
             gameOver = true;
             launchScoreReachedMessage(240);
         }
@@ -182,9 +182,9 @@ public class Game3View extends View {
     private void launchGameOver() {
         handler.removeCallbacksAndMessages(null);
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Game Over! You've run out of lives.")
+        builder.setMessage("Игра закончена! У тебя кончились жизни.")
                 .setCancelable(false)
-                .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
                         Intent intent = new Intent(context, Arkanoid.class);
@@ -199,7 +199,7 @@ public class Game3View extends View {
     private void launchScoreReachedMessage(int score) {
         handler.removeCallbacksAndMessages(null);
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Congratulations! You've reached " + score + " points!")
+        builder.setMessage("Поздравляем! Вы заработали " + score + " баллов!")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

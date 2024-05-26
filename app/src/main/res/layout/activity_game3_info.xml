@@ -16,7 +16,7 @@
         android:textSize="70dp" />
 
     <Button
-        android:id="@+id/button3"
+
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-300dp"
