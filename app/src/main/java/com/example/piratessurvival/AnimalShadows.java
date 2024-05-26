@@ -19,4 +19,12 @@ public class AnimalShadows extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+    public void StartInfo4(View view) {
+        Intent intent = new Intent(this, GAme4Info.class);
+        startActivity(intent);
+        finish();
+
+    }
 }

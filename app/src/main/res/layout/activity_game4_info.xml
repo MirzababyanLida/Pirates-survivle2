@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundarc"
-    android:orientation="vertical"
+    tools:context=".GAme4Info"
+    android:background="@drawable/background4rd"
     android:gravity="center">
+
 
     <TextView
         android:layout_width="1028dp"
         android:layout_height="699dp"
         android:layout_marginLeft="10dp"
-        android:text="Для того, чтобы получить воду, вам необходимо набрать 100 и более очков в игре  Candycrush."
-        android:textColor="@color/white"
+        android:text="Чтобы получить палатку, вам нужно набрать 10 очков в игре Animal shadows."
+        android:textColor="@color/black"
+
         android:textSize="70dp" />
 
     <Button
@@ -23,7 +26,7 @@
         android:backgroundTint="#F5B44F"
         android:text="Back"
         android:textColor="@color/black"
-        android:onClick="GoBackToGame2"
+        android:onClick="GoBackToGame4"
         android:textSize="50dp" />
 
 

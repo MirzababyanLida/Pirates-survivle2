@@ -22,4 +22,10 @@ public class Game2Strat extends AppCompatActivity {
         finish();
 
     }
+    public void StartInfo2(View view) {
+        Intent intent = new Intent(this, Game2Info.class);
+        startActivity(intent);
+        finish();
+
+    }
 }

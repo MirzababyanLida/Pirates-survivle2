@@ -140,7 +140,7 @@ public class Candycrush extends AppCompatActivity {
                 candy.get(x).setTag(notCandy);
 
                 // Check the score
-                if (score >= 20) {
+                if (score >= 100) {
                     // Show the congratulations dialog
                     showCongratulationsDialog();
                 }

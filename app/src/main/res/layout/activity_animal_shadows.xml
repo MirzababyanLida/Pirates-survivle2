@@ -16,5 +16,13 @@
         android:background="@drawable/play4rd"
         android:onClick="StartGameShadow" />
 
+    <ImageButton
+        android:layout_width="215dp"
+        android:layout_height="167dp"
+        android:layout_marginLeft="-200dp"
+        android:layout_marginTop="-700dp"
+        android:background="@drawable/infogame4"
+        android:onClick="StartInfo4" />
+
 
 </LinearLayout>

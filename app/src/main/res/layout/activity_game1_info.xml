@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Game1_info"
+    android:background="@drawable/water10">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="500dp"
+        android:text="Чтобы заработать дрова для огня, вам нужно набрать 10 очков."
+        android:textColor="@color/white"
+        android:textSize="80dp"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-1050dp"
+        android:layout_marginTop="1500dp"
+        android:backgroundTint="#F5B44F"
+        android:text="Back"
+        android:textColor="@color/black"
+        android:onClick="GoBackToGame1"
+        android:textSize="50dp" />
+
+</LinearLayout>

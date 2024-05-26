@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundarc"
+    android:background="@drawable/backgroundarkanoid"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -10,8 +10,9 @@
         android:layout_width="1028dp"
         android:layout_height="699dp"
         android:layout_marginLeft="10dp"
-        android:text="Для того, чтобы получить воду, вам необходимо набрать 100 и более очков в игре  Candycrush."
-        android:textColor="@color/white"
+        android:text="Чтобы получить еду, вам нужно набрать 240 очков в игре Arkanoid."
+        android:textColor="@color/black"
+
         android:textSize="70dp" />
 
     <Button
@@ -23,8 +24,7 @@
         android:backgroundTint="#F5B44F"
         android:text="Back"
         android:textColor="@color/black"
-        android:onClick="GoBackToGame2"
+        android:onClick="GoBackToGame3"
         android:textSize="50dp" />
-
 
 </LinearLayout>

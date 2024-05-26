@@ -11,5 +11,12 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/playarkanoid"
         android:onClick="startGame3"/>
+    <ImageButton
+        android:layout_width="138dp"
+        android:layout_height="122dp"
+        android:layout_marginLeft="400dp"
+        android:layout_marginTop="-1000dp"
+        android:background="@drawable/infogame3"
+        android:onClick="info2" />
 
 </LinearLayout>

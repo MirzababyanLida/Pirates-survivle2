@@ -21,7 +21,7 @@ public class Game1_Start extends AppCompatActivity {
     }
 
     public void info2(View view) {
-        Intent intent = new Intent(this, Game2_info.class);
+        Intent intent = new Intent(this, Game1_info.class);
         startActivity(intent);
         finish();
     }

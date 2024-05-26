@@ -1,5 +1,6 @@
 package com.example.piratessurvival;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,5 +19,12 @@ public class Arkanoid extends AppCompatActivity {
     public void startGame3(View view){
         Game3View gameView = new Game3View(this);
         setContentView(gameView);
+    }
+
+    public void info2(View view) {
+        Intent intent = new Intent(this, Game3Info.class);
+        startActivity(intent);
+        finish();
+
     }
 }
