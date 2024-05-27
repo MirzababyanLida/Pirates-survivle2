@@ -132,7 +132,7 @@ public class Game3View extends View {
         }
 
         canvas.drawText("" + points, 20, TEXT_SIZE, textPaint);
-        if (points == 240) {
+        if (points >= 230) {
             gameOver = true;
             launchScoreReachedMessage(240);
         }
@@ -199,7 +199,7 @@ public class Game3View extends View {
     private void launchScoreReachedMessage(int score) {
         handler.removeCallbacksAndMessages(null);
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Поздравляем! Вы заработали " + score + " баллов!")
+        builder.setMessage("Поздравляем! Вы заработали 230  баллов!")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

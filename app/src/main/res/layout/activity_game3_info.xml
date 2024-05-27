@@ -10,7 +10,7 @@
         android:layout_width="1028dp"
         android:layout_height="699dp"
         android:layout_marginLeft="10dp"
-        android:text="Чтобы получить еду, вам нужно набрать 240 очков в игре Arkanoid."
+        android:text="Чтобы получить еду, вам нужно набрать 230 очков в игре Arkanoid."
         android:textColor="@color/black"
 
         android:textSize="70dp" />
